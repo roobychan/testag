@@ -1,7 +1,7 @@
 'use strict';
-angular.module('myRallyTool', ['ngSanitize', 'ui.select'])
-	.controller('myRallyController', ['$http','$scope', function($http, $scope) {
-		let us = this;
+angular.module('myRallyTool', [])
+	.controller('myRallyController', ['$scope','$http', function($scope, $http) {
+		let us = $scope;
 		us.userStory = {
 			Name: '',
 			Owner: '',
@@ -20,6 +20,7 @@ angular.module('myRallyTool', ['ngSanitize', 'ui.select'])
 
 		$http.get('./owner.json').then((response) => {
 			us.user = response.data;
+			us.selected = us.user[0];
 		});
 
 		$http.get('./proty.json').then((response) => {
