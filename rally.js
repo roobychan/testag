@@ -24,6 +24,7 @@ restAPI.query({
 
 console.log(usList);
 
+//
 function usGet(result) {
 	for (var i = 0; i < result.Results.length; i++) {
 		var us = {};

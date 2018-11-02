@@ -1,0 +1,10 @@
+[
+	{
+		"name":"DEV",
+		"tag": "#DEV"
+	},
+	{
+		"name": "OPS",
+		"tag": "#OPS"
+	}
+]

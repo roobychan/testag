@@ -1,0 +1,18 @@
+[
+  {
+    "proty": "Critical",
+    "color": "#f1a7b"
+  },
+  {
+    "proty": "High",
+    "color": "#ee6c19"
+  },
+  {
+    "proty": "Med",
+    "color": "#fce205"
+  },
+  {
+    "proty": "Low",
+    "color": "#21a2e0"
+  }
+]
