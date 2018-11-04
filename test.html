@@ -15,59 +15,64 @@
 		<h3>Creaet User Story</h3>
 		<form ng-submit="mr.create()" class="form-horizontal">
 			<table class="table table-striped">
-				<!-- <tr>
-					<td>
-						<span>{{selected.name}}</span>
-					</td>
-					<td>
-						<ui-select ng-model="selected" theme="bootstrap" >
-				            <ui-select-match placeholder="Select or search a person in the list...">
-				            	{{$select.selected.name}}
-				            </ui-select-match>
-				            <ui-select-choices repeat="n in (user | filter: $select.search) track by n.email">
-				            	<div ng-bind="n.name"></div>
-				             	<small ng-bind-html="n.email | highlight: $select.search"></small>
-				            </ui-select-choices>
-				  		</ui-select>
-					</td>
-				</tr> -->
 				<tr>
 					<td>CRM:</td>
-					<td><input type="text" ng-model="mr.userStory.c_CRM" size = "10"></td>
+					<td><input type="text" ng-model="userStory.uStory.c_CRM" size = "10"></td>
 				</tr>
 				<tr>
 					<td>Description:</td>
-					<td><input type="text" ng-model="mr.userStory.name" size = "100"></td>
+					<td><input type="text" ng-model="userStory.other.pureName" size = "100"></td>
+				</tr>
+				<tr>
+					<td>Tag:</td>
+					<td>
+						<select ng-model="userStory.uStory.tag">
+							<option ng-repeat="u in tags" value={{u}>{{u.name}}</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+				<tr>
+					<td>Issue Type:</td>
+					<td><select ng-model="userStory.other.utype">
+						<option ng-repeat="u in utype" value="{{u}}">{{u}}</option>
+					</select>
+				</td>
+				</tr>
+				<tr>
+					<td>Application:</td>
+					<td>
+						<input type="text" ng-model="userStory.other.app" size="30">
+					</td>
 				</tr>
 				<tr>
 					<td>Owner:</td>
 					<td>
-						<select ng-model="userStory.Owner">
-							<option ng-repeat="u in user | orderBy: 'email' " value={{u.ref}}>{{u.name}}</option>
+						<select ng-model="userStory.uStory.Owner">
+							<option ng-repeat="u in user | orderBy: 'email' " value={{u}}>{{u.name}}</option>
 						</select>
 					</td>
 				</tr>
 				<tr>
 					<td>Priority:</td>
 					<td>
-						<select ng-model="userStory.DispalyColor">
+						<select ng-model="userStory.uStory.DispalyColor">
 							<option ng-repeat="u in proty" value={{u.color}}>{{u.proty}}</option>
 						</select>
 					</td>
 				</tr>
-				<tr>
-					<td>Tag:</td>
+					<td>Tester:</td>
 					<td>
-						<select ng-model="userStory.tag">
-							<option ng-repeat="u in tags" value={{u.tag}}>{{u.name}}</option>
+						<select ng-model="userStory.other.towner.ref">
+							<option ng-repeat="u in user | orderBy: 'email' " value={{u}}>{{u.name}}</option>
 						</select>
 					</td>
 				</tr>
 				<tr>
-					<td>Tester:</td>
+					<td>Iteration:</td>
 					<td>
-						<select ng-model="userStory.towner">
-							<option ng-repeat="u in user | orderBy: 'email' " value={{u.ref}}>{{u.name}}</option>
+						<select ng-model="userStory.uStory.itert">
+							<option ng-repeat="u in itert | orderBy: 'itert': true" value="={{u}}">{{u.itert}}</option>
 						</select>
 					</td>
 				</tr>
