@@ -1,6 +1,6 @@
 'use strict';
 angular.module('myRallyTool', [])
-	.controller('myRallyController', ['$scope','$http', function($scope, $http) {
+	.controller('myRallyController', ['$scope', '$http', function($scope, $http) {
 		let us = $scope;
 		us.userStory = {
 			uStory: {
@@ -13,7 +13,7 @@ angular.module('myRallyTool', [])
 				Iteration: {},
 				tag: {}
 			},
-			other:{
+			other: {
 				towner: {},
 				pureName: '',
 				utype: '',
@@ -48,21 +48,16 @@ angular.module('myRallyTool', [])
 
 		this.create = () => {
 			us.userStory.uStory.Name = us.userStory.other.pureName + '-' + us.userStory.uStory.c_CRM;
-			alert(JSON.stringify(us.userStory.uStory.Name));
-			// $http.post('http://127.0.0.1:3000/userstory/create',JSON.stringify(us.userStory),{
-   //              headers : {
-   //                  'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-   //              }
-   //          }).then((response) => {
-				
-			// });
+			alert(JSON.stringify(us.userStory.uStory));
 			$http({
 				method: 'POST',
-				url: 'http://127.0.0.1:3000/userstory/create',
+				url: 'http://localhost:3000/userstory/create',
 				data: JSON.stringify(us.userStory),
-				headers:{'Content-Type': 'application/x-www-form-urlencoded'},
-			}).then((response) =>{
-
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+			}).then((response) => {
+				console.log(response);
 			});
 		};
 
