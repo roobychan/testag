@@ -1,18 +1,18 @@
 [
   {
-    "proty": "Critical",
+    "ref": "Critical",
     "color": "#f1a7b"
   },
   {
-    "proty": "High",
+    "ref": "High",
     "color": "#ee6c19"
   },
   {
-    "proty": "Med",
+    "ref": "Med",
     "color": "#fce205"
   },
   {
-    "proty": "Low",
+    "ref": "Low",
     "color": "#21a2e0"
   }
 ]

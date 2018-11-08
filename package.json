@@ -27,7 +27,10 @@
         "protractor": "protractor e2e-tests/protractor.conf.js"
     },
     "dependencies": {
+        "async": "^2.6.1",
         "express": "^4.16.4",
-        "qs": "^6.5.2"
+        "qs": "^6.5.2",
+        "rally": "^2.1.2",
+        "startbootstrap-creative": "^5.0.1"
     }
 }
