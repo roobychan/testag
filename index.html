@@ -8,12 +8,45 @@
 	<!-- <link rel="stylesheet" href="select.css"> -->
 	<script src="myRallyTool.js"></script>
 	<script src='myText.js'></script>
-	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+	<!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/> -->
+	<link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+	<script src="/node_modules/angular-aria/angular-aria.js"></script>
+    <script src="/node_modules/angular-animate/angular-animate.js"></script>
+    <script src="/node_modules/angular-messages/angular-messages.js"></script>
+    <script src="/node_modules/angular-material/angular-material.js"></script>
+
 
 	<title></title>
 </head>
 <body>
-	<div class="container ng-cloak shadow-lg p-3 mb-5 bg-white rounded" style="width: 500px;"ng-controller="myRallyController as mr">
+	<div ng-controller="myRallyController as mr" layout="column" ng-cloak class="mid-inline-form">
+		<md-content md-theme="docs-dark" layout-padding>
+			<div>
+				<form ng-submit="mr.create()">
+					<md-input-container class='mid-block' flex-gt-sm>
+						<label>CRM</label>
+						<input ng-model="userStory.crm" size = "10" required="true" type = "number" min="2500000000" max="2599999999" limit="10">
+					</md-input-container>
+					<md-input-container class="mid-block" flex-gt-sm>
+						<label>Description</label>
+						<input type="text" ng-model="inputName" size = "100" required="true"> 
+					</md-input-container>
+					<md-autocomplete md-no-cache="true" md-selected-item="selectedTag" md-search-text="searchTag" md-items="u in mr.queryTag(searchTag)" md-item-text="u.name">
+						<md-item-template>
+							<span md-highlight-text="searchTag" md-hightlight-flags="^i">{{u.name}}</span>
+						</md-item-template>
+						<md-not-found>
+							Not found
+						</md-not-found>
+					</md-autocomplete>
+				</form>
+
+			</div>
+			
+		</md-content>
+		
+	</div>
+	<!-- <div class="container ng-cloak shadow-lg p-3 mb-5 bg-white rounded" style="width: 500px;"ng-controller="myRallyController as mr">
 		<legend>Create User Story</legend>
 		<form ng-submit="mr.create()" class="form-group">
 			<table class="table table table-hover table-borderless table-sm">
@@ -104,6 +137,6 @@
 		<div>
 			<textarea class="text-justify form-control">{{result}}</textarea>
 		</div>
-	</div>
+	</div> -->
 </body>
 </html>

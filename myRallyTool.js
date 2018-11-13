@@ -1,5 +1,5 @@
 'use strict';
-let myApp = angular.module('myRallyTool', []);
+let myApp = angular.module('myRallyTool', ['ngMaterial','ngMessages']);
 
 myApp.controller('myRallyController', ['$scope', '$http', function($scope, $http) {
 	let us = $scope;
@@ -60,6 +60,18 @@ myApp.controller('myRallyController', ['$scope', '$http', function($scope, $http
 
 	this.dropdownConvert = () => {
 		this.convert(us.selectedOwner, us.user, 'owner');
+	};
+
+	this.createFilterFor = (query) => {
+		let upperCaseQuery = query.toUpperCase();
+		return (tag) => {
+			return (tag.name.indexOf(upperCaseQuery) === 0);
+		}
+	}
+
+	this.queryTag = (query) => {
+		let results = query ? us.tags.filter( createFilterFor(query) ) : us.tags,
+          deferred;
 	};
 
 	this.create = () => {
